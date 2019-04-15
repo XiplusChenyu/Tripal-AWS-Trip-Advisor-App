@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--============================mobile supporter===================================-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="icon" type="image/png" href="images/icons/robot_icon.ico"/>
+    <link rel="stylesheet" type="text/css" href="css/chatbox.css">
+    <!--============================mobile supporter===================================-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--====================================Install AWS SDK=================================================-->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.418.0.min.js"></script>
+<!--====================================Install Bootstrap=================================================-->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<!--====================================Install Local API gateway Lib=================================================-->
+    <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="js/apigClient.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Dining Robot</title>
+</head>
+<body>
+
+<div class="chat_window">
+    <div class="top_menu">
+        <div class="title">Dining Robot</div>
+        <div class="signout"
+             onclick="window.location.href='https://dining-agent.auth.us-east-1.amazoncognito.com/logout?' +
+        'response_type=token&client_id=3pab5c41pc87n342kigmn3t2mv' +
+        '&logout_uri=https://d3n3sktne54bjw.cloudfront.net/index.html'">
+            Sign Out
+        </div>
+    </div>
+    <ul class="messages"></ul>
+    <div class="bottom_wrapper clearfix">
+        <div class="message_input_wrapper">
+            <input class="message_input" placeholder="Type your message here..." onkeypress="EnterPress(event)"/>
+        </div>
+        <div class="send_message">
+            <div class="icon"></div>
+
+        <div id="send_message" class="text">
+            <p>Send</p>
+        </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="message_template">
+    <li class="message">
+        <div class="avatar"></div>
+        <div class="text_wrapper">
+            <div class="text" ></div>
+        </div>
+    </li>
+
+</div>
+</body>
+
+
+<script type="text/javascript" src="js/iamDealer.js"></script>
+<script type="text/javascript" src="js/apiAdaptor.js"></script>
+<script type="text/javascript" src="js/chatBotDealer.js"></script>
+
+
+</html>
