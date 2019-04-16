@@ -8,6 +8,25 @@ body {
     font-family: "Calibri", "Roboto", sans-serif;
 }
 
+#top_menu{
+    background: url(../images/top-bar-bg.jpg) no-repeat right center;
+    border-color: black;
+    background-size: 100%;
+    box-shadow: 0 1px 3px black;
+}
+
+#chat_title{
+    margin-left: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    color: white;
+    text-shadow: 0.1em 0.1em 0.1em #999999
+}
+.btn_top{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
 .chat_window {
     position: absolute;
     width: calc(100% - 50px);
@@ -27,29 +46,9 @@ body {
     box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
 }
 
-.top_menu .title {
-    text-align: center;
-    color: #bcbdc0;
-    font-size: 30px;
-}
 
-.top_menu .signout  {
-    margin-right: calc(50% - 40px);
-    margin-left: calc(50% - 40px);
-    margin-top: 5px;
-    width: 80px;
-    text-align: center;
-    border-radius: 90px;
-    background-color: #a3d063;
-    border: 2px solid #a3d063;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.2s linear;
-}
-.top_menu .signout:hover {
-    color: #a3d063;
-    background-color: #fff;
-}
+
+
 .messages {
     position: center ;
     list-style: none;

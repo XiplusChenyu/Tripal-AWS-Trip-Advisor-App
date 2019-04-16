@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <!--============================mobile supporter===================================-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="icon" type="image/png" href="images/icons/robot_icon.ico"/>
-    <link rel="stylesheet" type="text/css" href="css/chatbox.css">
     <!--============================mobile supporter===================================-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--====================================Install AWS SDK=================================================-->
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.418.0.min.js"></script>
 <!--====================================Install Bootstrap=================================================-->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <!--====================================Install Local API gateway Lib=================================================-->
     <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
     <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
@@ -27,21 +27,69 @@
     <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
     <script type="text/javascript" src="js/apigClient.js"></script>
 
+    <!--====================================local css=================================================-->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Cute+Font|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/chatbox.css">
+
+
     <meta charset="UTF-8">
     <title>Dining Robot</title>
 </head>
 <body>
-
+<br>
 <div class="chat_window">
+    <nav class="navbar navbar-default" style="padding: 0" role="navigation">
+        <div id="top_menu" class="container-fluid">
+            <div class="navbar-header" id="chat_title">
+                Tripal Advisor
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="btn btn-warning"><a href="#">Sign Out</a></li>
+                    <li><a href="#">SVN</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Java
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">jmeter</a></li>
+                            <li><a href="#">EJB</a></li>
+                            <li><a href="#">Jasper Report</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">另一个分离的链接</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="top_menu">
-        <div class="title">Dining Robot</div>
-        <div class="signout"
-             onclick="window.location.href='https://dining-agent.auth.us-east-1.amazoncognito.com/logout?' +
-        'response_type=token&client_id=3pab5c41pc87n342kigmn3t2mv' +
-        '&logout_uri=https://d3n3sktne54bjw.cloudfront.net/index.html'">
-            Sign Out
+        <div class="title">Tripal Advisor</div>
+    </div>
+    <div class="card">
+        <div class="row">
+            <p class="col">&nbsp;</p>
+            <div class="btn_top btn btn-primary col-md-2"
+                 onclick="window.location.href='https://dining-agent.auth.us-east-1.amazoncognito.com/logout?' +
+            'response_type=token&client_id=3pab5c41pc87n342kigmn3t2mv' +
+            '&logout_uri=https://d3n3sktne54bjw.cloudfront.net/index.html'">
+                Sign Out
+            </div>
+            <div class="btn_top btn btn-primary col-md-2"
+                 onclick="window.location.href='https://dining-agent.auth.us-east-1.amazoncognito.com/logout?' +
+            'response_type=token&client_id=3pab5c41pc87n342kigmn3t2mv' +
+            '&logout_uri=https://d3n3sktne54bjw.cloudfront.net/index.html'">
+                Sign Out
+            </div>
+            <p class="col">&nbsp;</p>
         </div>
     </div>
+
+
+
     <ul class="messages"></ul>
     <div class="bottom_wrapper clearfix">
         <div class="message_input_wrapper">
