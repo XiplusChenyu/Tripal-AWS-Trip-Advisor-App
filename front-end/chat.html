@@ -29,6 +29,7 @@
 
     <!--====================================local css=================================================-->
     <link href="https://fonts.googleapis.com/css?family=Anton|Cute+Font|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/chatbox.css">
 
 
@@ -37,56 +38,23 @@
 </head>
 <body>
 <br>
+
+
+
 <div class="chat_window">
-    <nav class="navbar navbar-default" style="padding: 0" role="navigation">
-        <div id="top_menu" class="container-fluid">
-            <div class="navbar-header" id="chat_title">
-                Tripal Advisor
-            </div>
-            <div>
-                <ul class="nav navbar-nav">
-                    <li class="btn btn-warning"><a href="#">Sign Out</a></li>
-                    <li><a href="#">SVN</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Java
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">jmeter</a></li>
-                            <li><a href="#">EJB</a></li>
-                            <li><a href="#">Jasper Report</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">分离的链接</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">另一个分离的链接</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
+    <nav class="navbar navbar-light bg-dark">
+        <a class="navbar-brand" href="#"  id="chat_title">
+            <img src="images/icon.png" alt="Logo" class="d-inline-block" style="width:30px; height: 30px; box-shadow: 0 2px 5px black; border-radius: 50%; margin-right: 5px">
+            Tripal Advisor
+        </a>
+        <form class="form-inline">
+            <button class="btn btn_top sign_out_btn" type="button">Sign Out</button>
+            <button class="btn btn_top wish_list_btn" type="button"><i class="fa fa-file-text-o"></i>&nbsp Wish List</button>
+            <button class="btn btn_top info_btn" type="button" title="Instruction" data-toggle="popover" data-placement="bottom"
+                    data-content="Tripal Advisor is an online Chatbot who can offer you recommendation on your trip plan and you can save your trip plans in our wish list"><i class="fa fa-paper-plane"></i></button>
+        </form>
     </nav>
-    <div class="top_menu">
-        <div class="title">Tripal Advisor</div>
-    </div>
-    <div class="card">
-        <div class="row">
-            <p class="col">&nbsp;</p>
-            <div class="btn_top btn btn-primary col-md-2"
-                 onclick="window.location.href='https://dining-agent.auth.us-east-1.amazoncognito.com/logout?' +
-            'response_type=token&client_id=3pab5c41pc87n342kigmn3t2mv' +
-            '&logout_uri=https://d3n3sktne54bjw.cloudfront.net/index.html'">
-                Sign Out
-            </div>
-            <div class="btn_top btn btn-primary col-md-2"
-                 onclick="window.location.href='https://dining-agent.auth.us-east-1.amazoncognito.com/logout?' +
-            'response_type=token&client_id=3pab5c41pc87n342kigmn3t2mv' +
-            '&logout_uri=https://d3n3sktne54bjw.cloudfront.net/index.html'">
-                Sign Out
-            </div>
-            <p class="col">&nbsp;</p>
-        </div>
-    </div>
 
 
 

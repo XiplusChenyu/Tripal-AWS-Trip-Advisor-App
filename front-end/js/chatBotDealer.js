@@ -83,3 +83,7 @@ function EnterPress(e){ // detect key down
         sendMessage('Hello, I am your dining assistant!', robot);
     });
 }.call(this));
+
+$(function () {
+    $('[data-toggle="popover"]').popover()
+});
