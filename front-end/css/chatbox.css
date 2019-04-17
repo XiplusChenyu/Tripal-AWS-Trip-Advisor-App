@@ -20,6 +20,9 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     margin-left: 5px;
+    transition: all 0.2s linear;
+    transform-style: preserve-3d;
+    transition-duration: 0.3s;
     box-shadow: 0 1px 5px black;
 }
 
@@ -28,8 +31,6 @@ body {
     color: white;
     padding-left: 20px;
     padding-right: 20px;
-    transform-style: preserve-3d;
-    transition-duration: 0.5s;
 }
 
 .sign_out_btn {
@@ -40,6 +41,9 @@ body {
 .wish_list_btn{
      background:darkolivegreen;
      color: white;
+    transition: all 0.2s linear;
+    transform-style: preserve-3d;
+    transition-duration: 0.3s;
  }
 
 .wish_list_btn:hover{
@@ -47,8 +51,7 @@ body {
     color: white;
     padding-left: 20px;
     padding-right: 20px;
-    transform-style: preserve-3d;
-    transition-duration: 0.5s;
+
 }
 
 .info_btn{
@@ -94,11 +97,15 @@ body {
 .messages {
     position: center ;
     list-style: none;
-    padding: 30px 10px 0 10px;
-    margin: 0;
-    height: calc(100% - 190px);
+    padding: 50px 0 0 10px;
+    margin:0;
+    background-color: grey;
+    height: calc(100% - 160px);
     overflow: scroll;
+    scrollbar-base-color: grey;
+    scroll-padding-bottom: 0;
 }
+
 .messages .message {
     clear: both;
     overflow: hidden;
@@ -171,6 +178,7 @@ body {
     border-radius: 6px;
     width: calc(100% - 85px);
     min-width: 100px;
+    max-width: 20em;
     position: relative;
 }
 .messages .message .text_wrapper::after, .messages .message .text_wrapper:before {
@@ -193,7 +201,6 @@ body {
 .messages .message .text_wrapper .text {
 
     word-wrap:break-word;
-    word-break:break-all;
     font-size: 18px;
     font-weight: 300;
 }
@@ -208,44 +215,48 @@ body {
 }
 .bottom_wrapper .message_input_wrapper {
     display: inline-block;
-    height: 50px;
-    border-radius: 25px;
-    border: 1px solid #bcbdc0;
-    width: calc(100% - 160px);
+    height: 55px;
+    border-radius: 10px;
+    width: calc(100% - 90px);
     position: relative;
-    padding: 0 20px;
+    padding: 5px;
 }
 .bottom_wrapper .message_input_wrapper .message_input {
     border: none;
     height: 100%;
-    box-sizing: border-box;
     width: calc(100% - 40px);
-    position: absolute;
     outline-width: 0;
+    margin: auto;
+    padding: 10px;
     color: gray;
+    background: whitesmoke;
+    box-shadow: 0 10px 10px black;
 }
 .bottom_wrapper .send_message {
-    width: 140px;
-    height: 50px;
+    width: 80px;
+    height: 45px;
+    margin-top: 5px;
+    box-sizing: border-box;
     display: inline-block;
-    border-radius: 50px;
-    background-color: #a3d063;
-    border: 2px solid #a3d063;
+    font-family: 'Patua One', cursive;
+    border-radius: 5px;
+    background-color: forestgreen;
     color: #fff;
     cursor: pointer;
     transition: all 0.2s linear;
     text-align: center;
     float: right;
+    box-shadow: 0 10px 10px black;
 }
 .bottom_wrapper .send_message:hover {
-    color: #a3d063;
-    background-color: #fff;
+    background-color: darkolivegreen;
+    width: 90px;
 }
 .bottom_wrapper .send_message .text {
     font-size: 18px;
     font-weight: 300;
     display: inline-block;
-    line-height: 48px;
+    line-height: 45px;
 }
 
 .message_template {
@@ -267,4 +278,11 @@ body {
 
 .popover{
     box-shadow: 0 1px 3px black;
+}
+
+::-webkit-scrollbar
+{
+    width:0;
+    height:0;
+    background-color:#F5F5F5;
 }
