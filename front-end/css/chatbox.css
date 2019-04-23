@@ -39,7 +39,7 @@ body {
 }
 
 .wish_list_btn{
-     background:darkolivegreen;
+     background:#008B8B;
      color: white;
     transition: all 0.2s linear;
     transform-style: preserve-3d;
@@ -51,6 +51,25 @@ body {
     color: white;
     padding-left: 20px;
     padding-right: 20px;
+
+}
+
+
+.external_btn{
+    background:darkslategrey;
+    color: white;
+    padding-right: 20px;
+    padding-left: 20px;
+    transition: all 0.2s linear;
+    transform-style: preserve-3d;
+    transition-duration: 0.3s;
+}
+
+.external_btn:hover{
+    background:slategray;
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
 
 }
 
@@ -85,7 +104,7 @@ body {
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    background-color: grey;
+    background-color: lightgrey;
     overflow: hidden;
 }
 
@@ -99,10 +118,10 @@ body {
     list-style: none;
     padding: 50px 0 0 10px;
     margin:0;
-    background-color: grey;
+    background-color: lightgrey;
     height: calc(100% - 160px);
     overflow: scroll;
-    scrollbar-base-color: grey;
+    scrollbar-base-color: lightgrey;
     scroll-padding-bottom: 0;
 }
 
@@ -126,7 +145,7 @@ body {
 }
 .messages .message.left .text_wrapper
 {
-    background-color: darkslategrey;
+    background-color: steelblue;
     width:auto;
     padding: 12px;
     margin: 0 0 20px 20px;
@@ -135,7 +154,7 @@ body {
 }
 .messages .message.left .text_wrapper::after, .messages .message.left .text_wrapper::before {
     right: 100%;
-    border-right-color:darkslategrey;
+    border-right-color:steelblue;
 }
 .messages .message.left .text {
     color: white;
@@ -242,7 +261,7 @@ body {
     display: inline-block;
     font-family: 'Patua One', cursive;
     border-radius: 5px;
-    background-color: forestgreen;
+    background-color: #45829b;
     color: #fff;
     cursor: pointer;
     transition: all 0.2s linear;
@@ -251,7 +270,7 @@ body {
     box-shadow: 0 10px 10px black;
 }
 .bottom_wrapper .send_message:hover {
-    background-color: darkolivegreen;
+    background-color: steelblue;
     width: 90px;
 }
 .bottom_wrapper .send_message .text {
@@ -300,7 +319,7 @@ body {
 
 .modal-content{
     border-color: black;
-    box-shadow: 0 0 3px black;
+    box-shadow: 0 3px 10px black;
 }
 .modal-header{
     box-shadow: 0 1px 3px black;

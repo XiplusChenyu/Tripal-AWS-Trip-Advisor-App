@@ -23,9 +23,13 @@ function EnterPress(e){ // detect key down
                 var $message;
                 $message = $($('.message_template').clone().html());
                 $message.addClass(_this.message_side).find('.text').html(_this.text);
+
+                // for destination info
                 if(1 === _this.message_type){
                     $message.find('.text_btn').attr("data-toggle", "modal");
                     $message.find('.text_btn').attr("data-target", "#exampleModal");
+                    $('#popup_text').text("TEST!");
+                    $('#exampleModalLabel').text( "Test1");
                 }
 
                 $('.messages').append($message);
