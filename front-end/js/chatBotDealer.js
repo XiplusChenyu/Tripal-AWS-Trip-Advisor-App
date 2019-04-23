@@ -16,11 +16,18 @@ function EnterPress(e){ // detect key down
     Message = function (arg) {
         this.text = arg.text;
         this.message_side = arg.message_side;
+        this.message_type = arg.message_type;
+
         this.draw = function (_this) {
             return function () {
                 var $message;
                 $message = $($('.message_template').clone().html());
                 $message.addClass(_this.message_side).find('.text').html(_this.text);
+                if(1 === _this.message_type){
+                    $message.find('.text_btn').attr("data-toggle", "modal");
+                    $message.find('.text_btn').attr("data-target", "#exampleModal");
+                }
+
                 $('.messages').append($message);
                 return setTimeout(function () {
                     return $message.addClass('appeared');
@@ -41,7 +48,7 @@ function EnterPress(e){ // detect key down
 
 
 
-        sendMessage = function (text, sender) {
+        sendMessage = function (text, sender, m_type=null) {
             var $messages, message;
             if (text.trim() === '') {
                 return;
@@ -52,7 +59,8 @@ function EnterPress(e){ // detect key down
 
             message = new Message({
                 text: text,
-                message_side: message_side
+                message_side: message_side,
+                message_type: m_type
             });
 
             message.draw();
@@ -61,7 +69,7 @@ function EnterPress(e){ // detect key down
 
         getReply = function(msg){
             if (!token){
-                sendMessage('You are illegal user! Please try to sign in first :)', robot);
+                sendMessage('You are illegal user! Please try to sign in first :)', robot, 1);
                 return
             }
             var body = toBotRequest(msg, token);

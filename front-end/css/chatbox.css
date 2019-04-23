@@ -139,6 +139,7 @@ body {
 }
 .messages .message.left .text {
     color: white;
+
 }
 .messages .message.right .avatar {
     background: url('../images/avatars/people.jpeg') no-repeat center;
@@ -201,6 +202,7 @@ body {
 .messages .message .text_wrapper .text {
 
     word-wrap:break-word;
+    word-break:break-all;
     font-size: 18px;
     font-weight: 300;
 }
@@ -285,4 +287,31 @@ body {
     width:0;
     height:0;
     background-color:#F5F5F5;
+}
+
+.text_btn{
+    background: none;
+    border: none;
+    outline:none;
+    box-shadow: none !important;
+    white-space: normal;
+    text-align: left;
+}
+
+.modal-content{
+    border-color: black;
+    box-shadow: 0 0 3px black;
+}
+.modal-header{
+    box-shadow: 0 1px 3px black;
+    border-color: #333333;
+    font-family: 'Anton', sans-serif;
+    text-shadow: 0.1em 0.1em 0.1em black;
+    background: #444444;
+    color: white;
+
+}
+
+.close {
+    text-shadow: 0 1px 0 black;
 }
