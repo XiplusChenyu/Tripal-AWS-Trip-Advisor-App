@@ -3,7 +3,17 @@ body {
     background-size: cover;
     font-family: "Calibri", "Roboto", sans-serif;
 }
+.add_btn:hover {
+    background: #4682B4;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
+.add_btn {
+    background: #45829b;
+    color: white;
+}
 .list_window {
     position: absolute;
     width: calc(100% - 100px);
@@ -21,13 +31,25 @@ body {
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
+    height: calc(100% - 90px);
+
 }
 .part_entry{
     margin: 0;
     padding: 0;
 
 }
+
+.list-pre-container{
+    height: 100%
+}
+.list-container{
+    height: calc(100% - 60px);
+    overflow: scroll;
+}
+
 .list-name{
+    position: sticky;
     margin: 0 5px 1px 5px;
     height: 3em;
     font: 20px bold;
@@ -42,9 +64,28 @@ body {
 .name2{
     background: rgba(255,255,224, 0.6);
 }
+
+
 .list-group{
     top: 5px;
     padding: 0 5px 0 5px;
-    max-height: calc(100% - 400px);
-    overflow: scroll;
+}
+
+.modal-header{
+    box-shadow: 0 1px 3px black;
+    border-color: #333333;
+    font-family: 'Anton', sans-serif;
+    text-shadow: 0.1em 0.1em 0.1em black;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    border-radius: .3rem
+
+}
+.modal-content{
+    background: rgba(500, 500, 500, 0.75);
+    border-radius: .4rem
+}
+
+.modal-footer{
+    border: none;
 }
