@@ -7,14 +7,14 @@
     <link rel="icon" type="image/png" href="images/icons/robot_icon.ico"/>
     <!--============================mobile supporter===================================-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--====================================Install AWS SDK=================================================-->
+    <!--====================================Install AWS SDK=================================================-->
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.418.0.min.js"></script>
-<!--====================================Install Bootstrap=================================================-->
+    <!--====================================Install Bootstrap=================================================-->
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!--====================================Install Local API gateway Lib=================================================-->
+    <!--====================================Install Local API gateway Lib=================================================-->
     <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
     <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
     <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
@@ -31,79 +31,71 @@
     <link href="https://fonts.googleapis.com/css?family=Anton|Cute+Font|Montserrat|Patua+One" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/chatbox.css">
-
-
+    <link rel="stylesheet" type="text/css" href="css/wish.css">
     <meta charset="UTF-8">
-    <title>Tripal</title>
+    <title>Wish List</title>
 </head>
 <body>
-<br>
-
-
-
-<div class="chat_window">
+<div class="list_window">
 
     <nav class="navbar navbar-light bg-dark">
         <a class="navbar-brand" href="#"  id="chat_title">
             <img src="images/icon.png" alt="Logo" class="d-inline-block" style="width:30px; height: 30px; box-shadow: 0 2px 5px black; border-radius: 50%; margin-right: 5px">
-            Tripal Advisor
+            Wish List
         </a>
         <form class="form-inline">
             <button class="btn btn_top sign_out_btn" type="button">Sign Out</button>
-            <button class="btn btn_top wish_list_btn" type="button"><i class="fa fa-file-text-o"></i>&nbsp Wish List</button>
+            <button class="btn btn_top wish_list_btn" type="button"><i class="fa fa-television"></i>&nbsp Chat Page</button>
             <button class="btn btn_top info_btn" type="button" title="Instruction" data-toggle="popover" data-placement="bottom"
                     data-content="Tripal Advisor is an online Chatbot who can offer you recommendation on your trip plan and you can save your trip plans in our wish list"><i class="fa fa-paper-plane"></i></button>
         </form>
     </nav>
 
-
-
-    <ul class="messages"></ul>
-    <div class="bottom_wrapper clearfix">
-        <div class="message_input_wrapper">
-            <input class="message_input" placeholder="Type your message here..." onkeypress="EnterPress(event)"/>
+    <div class="list_entry row">
+        <div class="part_entry col-md-6">
+            <p class="list-name name1">Trip Plan</p>
+            <ul class="todo_list list-group">
+                <li class="list-group-item title">Wish List</li>
+                <li class="list-group-item active">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item active">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item active">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item active">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
         </div>
-        <div class="send_message">
-        <div id="send_message" class="text">
-            <p>Send</p>
+        <div class="part_entry col-md-6">
+            <p class="list-name name2">Trip History</p>
+            <ul class="did_list list-group">
+                <li class="list-group-item title">History</li>
+                <li class="list-group-item active">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
         </div>
 
-        </div>
 
     </div>
-</div>
-
-<div class="message_template">
-    <li class="message">
-        <div class="avatar"></div>
-        <div class="text_wrapper">
-            <button type="button" class="text btn text_btn"></button>
-        </div>
-    </li>
 
 </div>
+
 </body>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span style="color: whitesmoke"><i class="fa fa-window-close" aria-hidden="true"></i></span>
-                </button>
-            </div>
-            <div class="modal-body" id="popup_text">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn_top external_btn">
-                    <i class="fa fa-external-link" aria-hidden="true" style="font-size: large"></i></button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script type="text/javascript" src="js/iamDealer.js"></script>
 <script type="text/javascript" src="js/apiAdaptor.js"></script>
 <script type="text/javascript" src="js/chatBotDealer.js"></script>

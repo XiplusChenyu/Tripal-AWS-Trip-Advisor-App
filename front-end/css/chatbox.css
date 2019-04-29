@@ -4,7 +4,7 @@
 }
 
 body {
-    background: url(../images/bg-dining.jpg) no-repeat fixed;
+    background: url(../images/bg-chat.jpg) no-repeat fixed;
     background-size: cover;
     font-family: "Calibri", "Roboto", sans-serif;
 }
@@ -104,7 +104,7 @@ body {
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    background-color: lightgrey;
+    background-color: rgba(500, 500, 500, 0.15);
     overflow: hidden;
 }
 
@@ -114,14 +114,13 @@ body {
 
 
 .messages {
-    position: center ;
     list-style: none;
     padding: 50px 0 0 10px;
     margin:0;
-    background-color: lightgrey;
+    background-color: rgba(500, 500, 500, 0.15);
     height: calc(100% - 160px);
     overflow: scroll;
-    scrollbar-base-color: lightgrey;
+    scrollbar-base-color: rgba(500, 500, 500, 0.15);
     scroll-padding-bottom: 0;
 }
 

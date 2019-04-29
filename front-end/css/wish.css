@@ -1,0 +1,50 @@
+body {
+    background: url(../images/bg-wishlist.jpg) no-repeat fixed;
+    background-size: cover;
+    font-family: "Calibri", "Roboto", sans-serif;
+}
+
+.list_window {
+    position: absolute;
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background-color: rgba(500, 500, 500, 0.15);
+    overflow: hidden;
+}
+
+.list_entry{
+    position: relative;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.part_entry{
+    margin: 0;
+    padding: 0;
+
+}
+.list-name{
+    margin: 0 5px 1px 5px;
+    height: 3em;
+    font: 20px bold;
+    line-height: 3em;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 10px 20px -5px black;
+}
+.name1{
+    background: rgba(176,196,222, 0.6);
+}
+.name2{
+    background: rgba(255,255,224, 0.6);
+}
+.list-group{
+    top: 5px;
+    padding: 0 5px 0 5px;
+    max-height: calc(100% - 400px);
+    overflow: scroll;
+}
