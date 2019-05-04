@@ -1,0 +1,135 @@
+swagger: '2.0'
+info:
+  title: Tripal Wishlist 
+  description: 'A wishlist api for Tripal supporting post/delete/get.'
+  version: 1.0.0
+schemes:
+  - https
+basePath: /v1
+produces:
+  - application/json
+paths:
+
+  /wishlist/peopleID/{peopleID}/textID/{textID}:
+    get:
+      summary:  method
+      description: |
+        This API takes in a path parameter and returns zero or more wishlists that match the search query.
+      operationId: getwishlist
+      parameters:
+        - in: path
+          required: true
+          name: peopleID
+          type: string
+          description: the peopleID to be searched
+        - in: path
+          required: true
+          name: textID
+          type: string
+          description: the textID to be searched
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: search results
+          schema:
+            $ref: '#/definitions/SearchResponse'
+        '403':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+            
+    delete:
+      summary: photo search method
+      description: |
+        This API takes in a search query as a query parameter and returns zero or more photos that match the search query.
+      operationId: deletewishlist
+      parameters:
+        - in: path
+          required: true
+          name: peopleID
+          type: string
+          description: the peopleID to be deleted
+        - in: path
+          required: true
+          name: textID
+          type: string
+          description: the textID to be deleted
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: delete succeed
+          # schema:
+          #   $ref: '#/definitions/SearchResponse'
+        '403':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /postwishlist:
+    post:
+        summary: The endpoint for the Natural Language Understanding API.
+        description: |
+          This API takes in one or more messages from the client and returns
+          one or more messages as a response. The API leverages the NLP
+          backend functionality, paired with state and profile information
+          and returns a context-aware reply.
+        operationId: postwishlist
+        produces:
+          - application/json
+        parameters:
+          - name: body
+            in: body
+            required: true
+            schema:
+              $ref: '#/definitions/Wishlist'
+        responses:
+          '200':
+            description: wishlist post succeed
+            # schema:
+            #   $ref: '#/definitions/BotResponse'
+          '403':
+            description: Unauthorized
+            schema:
+              $ref: '#/definitions/Error'
+          '500':
+            description: Unexpected error
+            schema:
+              $ref: '#/definitions/Error'
+
+definitions:
+  SearchResponse:
+    type: object
+    properties:
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/Wishlist'
+  Wishlist:
+    type: object
+    properties:
+      Plan_Date:
+        type: string
+      Place:
+        type: array
+        items:
+          type: string
+      Description:
+        type: string
+        
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
