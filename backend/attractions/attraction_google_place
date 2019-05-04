@@ -1,0 +1,481 @@
+
+request: 
+https://maps.googleapis.com/maps/api/place/textsearch/json?query=new+york+city+point+of+interest&language=en&key=API_KEY
+
+
+
+response of google places api:
+
+
+
+
+{
+    "html_attributions": [],
+    "results": [
+        {
+            "formatted_address": "New York, NY, USA",
+            "geometry": {
+                "location": {
+                    "lat": 40.7828647,
+                    "lng": -73.9653551
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.81804399999999,
+                        "lng": -73.9339825
+                    },
+                    "southwest": {
+                        "lat": 40.7473416,
+                        "lng": -73.99703049999999
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+            "id": "c9bcef33f0cc85eda31f1c7444e9b1a3b82c9a9f",
+            "name": "Central Park",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 453,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/116197139246677886340/photos\">Francisco Vazquez</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAQsQpADGdqbVgbn_XyFelsdBkoHIbmQQcZEHaFfSp0T_inyYa5ca7-qKkKOU4bNvjZ33yaN-xODtPh1jl_KYMj9jh-DX69jtc2hUhYlHoWtGymr8gBCAPp1jHMDGfYHl_EhAPy9btCB4kLTdlPcNm5PO-GhTr-Tk4pTMoT1i4gYaypflHpbqTig",
+                    "width": 604
+                }
+            ],
+            "place_id": "ChIJ4zGFAZpYwokRGUGph3Mf37k",
+            "plus_code": {
+                "compound_code": "Q2MM+4V New York, USA",
+                "global_code": "87G8Q2MM+4V"
+            },
+            "rating": 4.8,
+            "reference": "ChIJ4zGFAZpYwokRGUGph3Mf37k",
+            "types": [
+                "park",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 136607
+        },
+        {
+            "formatted_address": "New York, NY 10011, USA",
+            "geometry": {
+                "location": {
+                    "lat": 40.7479925,
+                    "lng": -74.0047649
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.75890824999998,
+                        "lng": -73.99853175
+                    },
+                    "southwest": {
+                        "lat": 40.73287364999999,
+                        "lng": -74.01141114999999
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+            "id": "72dc79d023feec77725d7336e7c46fee27805319",
+            "name": "The High Line",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/102879563298121950840/photos\">Suttha Supanya</a>"
+                    ],
+                    "photo_reference": "CmRZAAAACB5nJbX0nWAzJepBVogsBajbbsvcI9ybQohidpqYQTF6Z-afAe6BEFUMN_NrMkDyyilZ2PYW8E0U68mD_QLSCOTaRWvX_6bPO75g7GUw1s86q4UG5xIMaUt9FTLkRkjmEhDeriDJPPJ1GOdtHfRPv-7FGhQ74FvNomSfVZQaYFEPEiCSZbzX7A",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJ5bQPhMdZwokRkTwKhVxhP1g",
+            "plus_code": {
+                "compound_code": "PXXW+53 New York, USA",
+                "global_code": "87G7PXXW+53"
+            },
+            "rating": 4.7,
+            "reference": "ChIJ5bQPhMdZwokRkTwKhVxhP1g",
+            "types": [
+                "park",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 27013
+        },
+        {
+            "formatted_address": "476 5th Ave, New York, NY 10018, USA",
+            "geometry": {
+                "location": {
+                    "lat": 40.75318230000001,
+                    "lng": -73.9822534
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.75464972989272,
+                        "lng": -73.98045317010727
+                    },
+                    "southwest": {
+                        "lat": 40.75195007010728,
+                        "lng": -73.98315282989272
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/school-71.png",
+            "id": "0ddfa876ffc305e1b241cbac33601e82d347775b",
+            "name": "New York Public Library - Stephen A. Schwarzman Building",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2160,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/106272472977622001767/photos\">shigeru kasama</a>"
+                    ],
+                    "photo_reference": "CmRaAAAANPwQOg-_tPaJL6o3zf-y3DqrBx1n7yLL9jZi0GYNce4AFlEUqPQNcJqMoca0eN9j5H5_rlS1S_F7nrhsdCKmI4TXeJQhc4q6yeGDOTJLOIpK73zdU80XZ3j7QuRoy8atEhAdouDhZFbF_4vX9pU_nJIrGhT1C3rhdWH0t6mqYRsNJ6K4rnLBdQ",
+                    "width": 3840
+                }
+            ],
+            "place_id": "ChIJqaiomQBZwokRTHOaUG7fUTs",
+            "plus_code": {
+                "compound_code": "Q239+73 New York, USA",
+                "global_code": "87G8Q239+73"
+            },
+            "rating": 4.7,
+            "reference": "ChIJqaiomQBZwokRTHOaUG7fUTs",
+            "types": [
+                "library",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 2252
+        },
+        {
+            "formatted_address": "362 3rd Ave, New York, NY 10016, USA",
+            "geometry": {
+                "location": {
+                    "lat": 40.741038,
+                    "lng": -73.9817767
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.74233362989273,
+                        "lng": -73.98033917010729
+                    },
+                    "southwest": {
+                        "lat": 40.73963397010728,
+                        "lng": -73.98303882989272
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+            "id": "214368a5fc06b6c6ce86c7ff8345f273d0973481",
+            "name": "Modern Pinball NYC Arcade, Party Place & Museum",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 606,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/103763074351171836771/photos\">Modern Pinball NYC Arcade, Party Place &amp; Museum</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAgbzX-HjO3tf8IlxGVuhoCC3PmlJJaeXCx_kNlGLCz7Uq9gLzO9E5n3Qlo4dzRlMHe3-35eUKPBdJW01hdfDuU2_ssMU-R1A0E5b0t_XvXg2H71K3UyyCqiutXFc__9IMEhAvXSp3gptQ7vH0s57iDXQyGhSl-vH4pmmcOVLCgYpYPkhVGBGlAg",
+                    "width": 1080
+                }
+            ],
+            "place_id": "ChIJnxcN7AlZwokRvjMz27li-6k",
+            "plus_code": {
+                "compound_code": "P2R9+C7 New York, USA",
+                "global_code": "87G8P2R9+C7"
+            },
+            "rating": 4.5,
+            "reference": "ChIJnxcN7AlZwokRvjMz27li-6k",
+            "types": [
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 486
+        },
+        {
+            "formatted_address": "65 Jumel Terrace, New York, NY 10032, USA",
+            "geometry": {
+                "location": {
+                    "lat": 40.8344548,
+                    "lng": -73.93857269999999
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.83582327989271,
+                        "lng": -73.93737807010729
+                    },
+                    "southwest": {
+                        "lat": 40.83312362010727,
+                        "lng": -73.94007772989272
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+            "id": "1af6f9f8821009fe8754f539b9086ce21ad9c181",
+            "name": "Morris-Jumel Mansion",
+            "opening_hours": {
+                "open_now": false
+            },
+            "photos": [
+                {
+                    "height": 2178,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/108356907573556585502/photos\">Jason Lowe</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAV31J1er6L2yFoTpzC377tfbdY9fTsFudAg0eaprdNP2fzFjPCljZWh0LOBJwhmsZ87zfTZkrnDVf9YkESbMTP_fM2RQKpbhdWIEX4Y-AiTnALZPjRfpwIHJ3PY1EkPH3EhCxBn7Xyn9ZQq1U-uCWkjxpGhQhfT8gcDzYPsjYsRCaI6qDHZ-NYw",
+                    "width": 3264
+                }
+            ],
+            "place_id": "ChIJqTIQToL2wokRKbmUA423_YY",
+            "plus_code": {
+                "compound_code": "R3M6+QH New York, USA",
+                "global_code": "87G8R3M6+QH"
+            },
+            "rating": 4.4,
+            "reference": "ChIJqTIQToL2wokRKbmUA423_YY",
+            "types": [
+                "museum",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 199
+        },
+        {
+            "formatted_address": "725 5th Ave, New York, NY 10022, USA",
+            "geometry": {
+                "location": {
+                    "lat": 40.7624284,
+                    "lng": -73.973794
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.76369482989271,
+                        "lng": -73.97267362010726
+                    },
+                    "southwest": {
+                        "lat": 40.76099517010727,
+                        "lng": -73.97537327989271
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+            "id": "f1176cd56ea96d6373cc7dbef3f8fc2b3b9fc2a2",
+            "name": "Trump Tower",
+            "opening_hours": {},
+            "photos": [
+                {
+                    "height": 3115,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/106131620467738463962/photos\">Rune Skogsrud</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAuI9rS9a6AmFgbBVqE6ceTaj1_HqspVEVDZZMdjOUvt6GIG7LTyy-Zyc2U5c7HKZtjMOEuR2CEK6N1LqPEJcY1ijALC9lA71V3C840WxDhJ2mA7ssya0rxndc9j8Bw95yEhA9RlmztwoCq8JgU9c26niYGhR5IuFfjPXqytq5_kFzoRzjK8vgYA",
+                    "width": 4687
+                }
+            ],
+            "place_id": "ChIJrc9T9fpYwokRdvjYRHT8nI4",
+            "plus_code": {
+                "compound_code": "Q26G+XF New York, USA",
+                "global_code": "87G8Q26G+XF"
+            },
+            "rating": 3.5,
+            "reference": "ChIJrc9T9fpYwokRdvjYRHT8nI4",
+            "types": [
+                "premise",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 6552
+        },
+        {
+            "formatted_address": "234 W 42nd St, New York, NY 10036, USA",
+            "geometry": {
+                "location": {
+                    "lat": 40.7565641,
+                    "lng": -73.9886975
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.75798812989272,
+                        "lng": -73.98728087010728
+                    },
+                    "southwest": {
+                        "lat": 40.75528847010727,
+                        "lng": -73.98998052989272
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+            "id": "7fb1db25b6f21a795eafa568ded19ff99c38e884",
+            "name": "CitySights",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 426,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/101781661712379806961/photos\">CitySights NY</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAFioeezrgI5RYD1_a90XNG07a0f1mI1PulucJ-yHxVPcT6_fTe2GOg9Hcz_pgwLYTeKH6SYZ1HB9oHE-HiO-0sedmcVXUvGBdHooRM33g1ajNHVv5zvW8uVuCBDZJ3nR1EhBkyEmYbLCPOyVfDvwIZ6gbGhTBHml2Zc1209QQKEFFdkNM8gz75A",
+                    "width": 820
+                }
+            ],
+            "place_id": "ChIJ8VOfr1RYwokR03qsCp4k0xE",
+            "plus_code": {
+                "compound_code": "Q246+JG New York, USA",
+                "global_code": "87G8Q246+JG"
+            },
+            "rating": 3.3,
+            "reference": "ChIJ8VOfr1RYwokR03qsCp4k0xE",
+            "types": [
+                "travel_agency",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 238
+        },
+        {
+            "formatted_address": "910 Gresham Rd, Brooklyn, NY 11231, USA",
+            "geometry": {
+                "location": {
+                    "lat": 40.6854942,
+                    "lng": -74.02597279999999
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.68669702989272,
+                        "lng": -74.02437152010727
+                    },
+                    "southwest": {
+                        "lat": 40.68399737010728,
+                        "lng": -74.02707117989272
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+            "id": "6396548ac71a1bc5ff465659a97915f19acf2f63",
+            "name": "Governors Island Picnic Point",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1997,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/116025510213363389591/photos\">matt melachrinos</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAO9rRa_6uohYs0tuTHmnWnAFpYA4w6hIqzGpvzPEeOxx4AjC61pFwm0pw_JwA9xwUdKWSDLQLmLRDe4Z8sZX7yfUvqVoooq1vGTn0K-R-tRZQoAGgMf6ZqCiv9mScSCXkEhDEEc7Yl4jifdGaOd_JYOo9GhRz0AsqqeDpXJX3yCcp576hRJ5Tmg",
+                    "width": 8011
+                }
+            ],
+            "place_id": "ChIJozrGZ2VawokRhCYCtqZjo2E",
+            "plus_code": {
+                "compound_code": "MXPF+5J New York, USA",
+                "global_code": "87G7MXPF+5J"
+            },
+            "rating": 4.7,
+            "reference": "ChIJozrGZ2VawokRhCYCtqZjo2E",
+            "types": [
+                "park",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 262
+        },
+        {
+            "formatted_address": "9 Murray Street # 3, New York, NY 10007, USA",
+            "geometry": {
+                "location": {
+                    "lat": 40.7136425,
+                    "lng": -74.0079468
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.71490082989272,
+                        "lng": -74.00667097010728
+                    },
+                    "southwest": {
+                        "lat": 40.71220117010727,
+                        "lng": -74.00937062989273
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png",
+            "id": "6ea82afe1b0e05831851e692f338d0057c7293d4",
+            "name": "New York Public Interest",
+            "place_id": "ChIJuQSJxxhawokRgcU4m_cUCgE",
+            "plus_code": {
+                "compound_code": "PX7R+FR New York, USA",
+                "global_code": "87G7PX7R+FR"
+            },
+            "rating": 0,
+            "reference": "ChIJuQSJxxhawokRgcU4m_cUCgE",
+            "types": [
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 0
+        },
+        {
+            "formatted_address": "180 Greenwich St, New York, NY 10007, USA",
+            "geometry": {
+                "location": {
+                    "lat": 40.7114743,
+                    "lng": -74.0134432
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 40.71225617989272,
+                        "lng": -74.00964974999999
+                    },
+                    "southwest": {
+                        "lat": 40.70955652010728,
+                        "lng": -74.01589875000001
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/generic_recreational-71.png",
+            "id": "375f41aa9a1bff7c3766d2f5d80f21bd56487236",
+            "name": "9/11 Memorial",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 4032,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/114263201751859642916/photos\">Gabriel Pineda</a>"
+                    ],
+                    "photo_reference": "CmRaAAAAQSdnmoXhhy1BKaJ0MNSb584R64L_yPHr6KVC45tfvb6IWba1hteyoPAmhyWvfvv9SbqAWOU7hdbHw-qST6WI2VFBV89iwCS-Wy8z7l0J4JMZhVNdVI6vvZk6TaxxmHDvEhC9X7DwLcf-kLSmeKvH6wbWGhQ4a8ihjJqYvMiEoOxmt3gVJmlUHg",
+                    "width": 3024
+                }
+            ],
+            "place_id": "ChIJRcvoOxpawokR7R4dQMXMMPQ",
+            "plus_code": {
+                "compound_code": "PX6P+HJ New York, USA",
+                "global_code": "87G7PX6P+HJ"
+            },
+            "rating": 4.8,
+            "reference": "ChIJRcvoOxpawokR7R4dQMXMMPQ",
+            "types": [
+                "park",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 39203
+        }
+    ],
+    "status": "OK"
+}
