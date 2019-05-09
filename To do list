@@ -1,1 +1,36 @@
-To do list:
+Functionality:
+
+1. home page
+
+Cognito -- usergroup, identity group
+CORS 
+
+2. chatbot
+lex -- fill the indent
+
+lambda function: return content like results of info from API or link of serach result.
+
+(recognize link -- how to jump to page -- return back to chatpage)
+
+click on some items to add them in the wish list! (IMPORTANT and need to be modified)
+
+use database to store user information
+
+
+3. wish list/history
+possibly use elasticsearch for better search of detailed arrangements or route in history.
+
+past date routes in wish list transferred to history 
+
+use sqs and lambda and sns to do sms notification.
+notice here different from in assignment, user should be noticed on the arranged date (a week).
+
+
+
+
+Need to do:
+
+-- system design: function plot
+
+-- task allocation
+
