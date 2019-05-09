@@ -25,6 +25,8 @@ past date routes in wish list transferred to history
 use sqs and lambda and sns to do sms notification.
 notice here different from in assignment, user should be noticed on the arranged date (a week).
 
+user should also be able to click on items in list to get detailed info by jump or search in db...
+
 
 
 
