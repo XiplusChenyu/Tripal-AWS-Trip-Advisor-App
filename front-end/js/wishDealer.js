@@ -5,6 +5,7 @@ function addNewTrip() {
     let idea = $('#place_idea').val();
     let date = new Date($('#date').val());
     let currentDate = new Date();
+    let textid = test_people_id+date.getTime()+place;
     if (currentDate.getTime() > date.getTime()) {
         alert("The plan date is before today!");
         $("#closeAdd").trigger("click");
@@ -16,6 +17,7 @@ function addNewTrip() {
     }
     else {
         let doc = {
+            "textId": textid,
             "peopleID": test_people_id,
             "place": place,
             "idea": idea,

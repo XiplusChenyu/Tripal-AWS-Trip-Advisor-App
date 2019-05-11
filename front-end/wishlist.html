@@ -44,8 +44,12 @@
             Wish List
         </a>
         <form class="form-inline">
-            <button class="btn btn_top sign_out_btn" type="button">Sign Out</button>
-            <button class="btn btn_top wish_list_btn" type="button"><i class="fa fa-television"></i>&nbsp Chat Page</button>
+            <button class="btn btn_top sign_out_btn" type="button"
+                    onclick="window.location.href='https://tripal.auth.us-east-1.amazoncognito.com/logout?' +
+                    'response_type=token&client_id=3f5rqijpao6tps3b58u59squ00' +
+                    '&logout_uri=https://s3.amazonaws.com/tripal-web-holder/index.html'">Sign Out</button>
+            <button class="btn btn_top wish_list_btn" type="button"
+                    onclick=chatRouter()><i class="fa fa-television"></i>&nbsp Chat Page</button>
             <button class="btn btn_top add_btn" type="button" data-toggle="modal" data-target="#addPlanModal"><i class="fa fa-television"></i>&nbsp Add New Plan</button>
             <button class="btn btn_top info_btn" type="button" title="Instruction" data-toggle="popover" data-placement="bottom"
                     data-content="Tripal Advisor is an online Chatbot who can offer you recommendation on your trip plan and you can save your trip plans in our wish list"><i class="fa fa-paper-plane"></i></button>
