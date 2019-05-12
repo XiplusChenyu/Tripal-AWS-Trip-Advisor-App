@@ -1,11 +1,12 @@
 // current_user is defined in userDealer
-
 function addNewTrip() {
     let place = $('#place').val();
     let idea = $('#place_idea').val();
     let date = new Date($('#date').val());
+
     let currentDate = new Date();
-    let textid = current_user.user_id + date.getTime()+place;
+    let textid = current_user.user_id + currentDate.getTime();
+
     if (currentDate.getTime() > date.getTime()) {
         alert("The plan date is before today!");
         $("#closeAdd").trigger("click");
@@ -25,18 +26,35 @@ function addNewTrip() {
             "planDate": date.toLocaleDateString()
         };
         console.log(doc);
-        alert("add!");
         $("#closeAdd").trigger("click");
+        apigClient.postwishlistPost({}, doc, {}).then((res)=>{
+            console.log(res);
+            console.log('post a new plan');
+            appendTrip(doc);
+        }).catch((e)=>{
+            console.log('fail to add a new plan');
+            console.log(e);
+        })
 
-        // Todo: add json to DynamoDB
     }
 }
 
-
 function deletePlan(textId) {
-    $(`#${textId}`).addClass('hide');
+    console.log(textId);
     console.log(`delete id ${textId}`);
     // Todo: delete text from DB
+    let para={
+        textID: `${textId}`,
+        peopleID: 'fake',
+    };
+    apigClient.wishlistTextIDTextIDGet(para, {}, {}).then((res)=>{
+        console.log(res);
+        console.log('delete plan');
+        $(`#${textId}`).addClass('hide');
+    }).catch((e)=>{
+        console.log('fail to delete new plan');
+        console.log(e);
+    })
 }
 
 function appendTrip(jsonResponse){
@@ -76,29 +94,39 @@ function appendTrip(jsonResponse){
 function getAllPlans(peopleID){
     console.log(`get plans for people ${peopleID}`);
     // todo: query appendTrip here to add all items in the page
+    let para={
+        peopleID: peopleID,
+        textID: 'fake',
+    };
+    apigClient.wishlistPeopleIDPeopleIDGet(para, {}, {}).then((res)=>{
+        console.log(res);
+        let items = res['data'];
+        for (let j = 0; j < items.length; j++){
+            let current_res = items[j];
+            appendTrip(current_res);
+        }
 
+    }).catch((e)=>{
+        console.log('failed to obtain people info');
+        console.log(e);
+    })
 }
 
+wishPage = true;
 
-getAllPlans(current_user.user_id);
-
-test1 =
-    {
-        "textId": "75dfa73a-edd9-4f0b-845b-ac668095e8cwerwgwerg51558828800000New",
-        "peopleID": "75dfa73a-edd9-4f0b-845b-ac668095e8c52312",
-        "place": "New Test 1",
-        "idea": "New Test Containt",
-        "planDate": "5/25/2019",
-        "timeStamp": "5/11/2019"};
-
-test2 =
-    {textId: "75dfa73a-edd9-4f0b-845b-ac668095e8c51sdfsdf558828800000New",
-        peopleID: "75dfa73a-edd9-4f0b-845b-ac668095e8c5",
-        place: "Old",
-        idea: "Old",
-        planDate: "5/10/2019",
-        timeStamp: "5/10/2019"};
-
-appendTrip(test2);
-appendTrip(test1);
-
+// test1 =
+//     {
+//         "textId": "75dfa73a-edd9-4f0b-845b-ac668095e8cwerwgwerg51558828800000New",
+//         "peopleID": "75dfa73a-edd9-4f0b-845b-ac668095e8c52312",
+//         "place": "New Test 1",
+//         "idea": "New Test Containt",
+//         "planDate": "5/25/2019",
+//         "timeStamp": "5/11/2019"};
+//
+// test2 =
+//     {textId: "75dfa73a-edd9-4f0b-845b-ac668095e8c51sdfsdf558828800000New",
+//         peopleID: "75dfa73a-edd9-4f0b-845b-ac668095e8c5",
+//         place: "Old",
+//         idea: "Old",
+//         planDate: "5/10/2019",
+//         timeStamp: "5/10/2019"};

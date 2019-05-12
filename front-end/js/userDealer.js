@@ -10,6 +10,8 @@ current_user = {
     user_name: 'unk',
 };
 
+wishPage = false;
+
 try {
     id_token = location.toString().split('id_token=')[1].split('&access_token=')[0];
     access_token = location.toString().split('&access_token=')[1].split('&')[0];
@@ -35,6 +37,8 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 AWS.config.credentials.refresh((error) => {
     if (error) {
         console.error(error);
+        alert("Your login is expired, please relogin to use our app");
+        window.location.replace('https://s3.amazonaws.com/tripal-web-holder/index.html');
         console.log('Fail to log!');
     } else {
         console.log('Successfully logged!');
@@ -43,12 +47,36 @@ AWS.config.credentials.refresh((error) => {
             AccessToken: access_token /* required */
         };
         cognitoidentityserviceprovider.getUser(params, function(err, data) {
-            if (err) console.log(err, err.stack);
+            if (err) {
+                console.log(err, err.stack);
+                alert("Your login is expired, please relogin to use our app");
+                window.location.replace('https://s3.amazonaws.com/tripal-web-holder/index.html');
+            }
             // an error occurred
             else {
                 current_user.user_id = data['UserAttributes'][0]['Value'];
                 current_user.user_name = `${data['UserAttributes'][2]['Value']} ${data['UserAttributes'][3]['Value']}`;
                 console.log(current_user);
+                // Make the call to obtain credentials
+                AWS.config.credentials.get(function(){
+
+                    // Credentials will be available when this function is called.
+                    try {
+                        apigClient = apigClientFactory.newClient({
+                            accessKey: AWS.config.credentials.accessKeyId,
+                            secretKey: AWS.config.credentials.secretAccessKey,
+                            sessionToken: AWS.config.credentials.sessionToken
+                        });
+                        console.log('create apiClient');
+                    }
+                    catch(e) {
+                        console.log('token exchange failed');
+                    }
+                    if (wishPage){
+                        getAllPlans(current_user.user_id);
+                    }
+
+                });
             }
             // successful response
         });
@@ -68,91 +96,3 @@ function chatRouter(){
     let redirectUrl = `https://s3.amazonaws.com/tripal-web-holder/chat.html?id_token=${id_token}&access_token=${access_token}&end`
     return window.location.replace(redirectUrl)
 }
-
-
-
-
-// var apigClient = null;
-//
-//
-// // Make the call to obtain credentials
-// AWS.config.credentials.get(function(){
-//
-//     // Credentials will be available when this function is called.
-//     try {
-//         token = AWS.config.credentials.accessKeyId;
-//
-//         apigClient = apigClientFactory.newClient({
-//             accessKey: AWS.config.credentials.accessKeyId,
-//             secretKey: AWS.config.credentials.secretAccessKey,
-//             sessionToken: AWS.config.credentials.sessionToken
-//         });
-//     }
-//     catch(e) {
-//         console.log('token exchange failed');
-//     }
-//
-// });
-
-
-
-
-
-// this function getCredentials with auto code
-// var gainCredentials = function (auth_code) {
-//
-//     console.log(auth_code);
-//
-//     return new Promise((resolve, reject) => {
-//         // https://docs.aws.amazon.com/cognito/latest/developerguide/token-endpoint.html
-//         let postContent = {
-//             url: `${cognito_domain_url}/oauth2/token`,
-//
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/x-www-form-urlencoded'
-//             },
-//             data: {
-//                 grant_type: 'authorization_code',
-//                 client_id: client_id,
-//                 redirect_uri: redirect_uri,
-//                 code: auth_code
-//             }
-//         };
-//
-//         // post to terminal node
-//         $.ajax(postContent).done((response)=>{
-//             if (!response.id_token){
-//                 reject(response);
-//                 console.log(JSON.stringify(response));
-//             }
-//
-//             AWS.config.credentials.clearCachedId(); // clear old one and create new credential
-//             AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-//                 IdentityPoolId: identity_pool_id,
-//                 Logins: {
-//                     [`cognito-idp.${aws_region}.amazonaws.com/${user_pool_id}`]: response.id_token
-//                 }
-//             });
-//
-//             AWS.config.credentials.refresh((error) => {
-//                 if(error) {
-//                     reject(error);
-//                 } else {
-//                     console.log('successfully logged in');
-//                     resolve(AWS.config.credentials); // promise return
-//                 }
-//             });
-//         });
-//     });
-// };
-//
-// gainCredentials(token).then((credentials) =>{
-//     apigClient = apigClientFactory.newClient({
-//         accessKey: AWS.config.credentials.accessKeyId,
-//         secretKey: AWS.config.credentials.secretAccessKey,
-//         sessionToken: AWS.config.credentials.sessionToken
-//     });
-// }).catch((e)=>{
-//     console.log('token exchange failed');
-// });

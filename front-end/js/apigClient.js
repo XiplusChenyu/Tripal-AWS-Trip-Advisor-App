@@ -53,7 +53,7 @@ apigClientFactory.newClient = function (config) {
 
     
     // extract endpoint and path from url
-    var invokeUrl = 'https://2sjoo6u2oh.execute-api.us-east-1.amazonaws.com/initial';
+    var invokeUrl = 'https://3vw2b5s3d4.execute-api.us-east-1.amazonaws.com/sugar';
     var endpoint = /(^https?:\/\/[^\/]+)/g.exec(invokeUrl)[1];
     var pathComponent = invokeUrl.substring(endpoint.length);
 
@@ -116,6 +116,114 @@ apigClientFactory.newClient = function (config) {
         
         
         return apiGatewayClient.makeRequest(chatbotOptionsRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.postwishlistPost = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, ['body'], ['body']);
+        
+        var postwishlistPostRequest = {
+            verb: 'post'.toUpperCase(),
+            path: pathComponent + uritemplate('/postwishlist').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(postwishlistPostRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.postwishlistOptions = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        
+        var postwishlistOptionsRequest = {
+            verb: 'options'.toUpperCase(),
+            path: pathComponent + uritemplate('/postwishlist').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(postwishlistOptionsRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.wishlistPeopleIDPeopleIDGet = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, ['textID', 'peopleID'], ['body']);
+        
+        var wishlistPeopleIDPeopleIDGetRequest = {
+            verb: 'get'.toUpperCase(),
+            path: pathComponent + uritemplate('/wishlist/peopleID/{peopleID}').expand(apiGateway.core.utils.parseParametersToObject(params, ['textID', 'peopleID'])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(wishlistPeopleIDPeopleIDGetRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.wishlistPeopleIDPeopleIDOptions = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        
+        var wishlistPeopleIDPeopleIDOptionsRequest = {
+            verb: 'options'.toUpperCase(),
+            path: pathComponent + uritemplate('/wishlist/peopleID/{peopleID}').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(wishlistPeopleIDPeopleIDOptionsRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.wishlistTextIDTextIDGet = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, ['textID'], ['body']);
+        
+        var wishlistTextIDTextIDGetRequest = {
+            verb: 'get'.toUpperCase(),
+            path: pathComponent + uritemplate('/wishlist/textID/{textID}').expand(apiGateway.core.utils.parseParametersToObject(params, ['textID'])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(wishlistTextIDTextIDGetRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.wishlistTextIDTextIDOptions = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        
+        var wishlistTextIDTextIDOptionsRequest = {
+            verb: 'options'.toUpperCase(),
+            path: pathComponent + uritemplate('/wishlist/textID/{textID}').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(wishlistTextIDTextIDOptionsRequest, authType, additionalParams, config.apiKey);
     };
     
 
