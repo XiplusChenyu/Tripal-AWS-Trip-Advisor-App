@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/chatbox.css">
     <link rel="stylesheet" type="text/css" href="css/wish.css">
+    <link rel="stylesheet" type="text/css" href="css/dynamic.css">
+
     <meta charset="UTF-8">
     <title>Wish List</title>
 </head>
@@ -57,30 +59,31 @@
     </nav>
 
     <div class="list_entry row">
-        <div class="part_entry col-md-6 list-pre-container">
+        <div class="part_entry col-6 list-pre-container">
             <p class="list-name name1">Trip Plan</p>
             <div class="list-container">
-                <ul class="todo_list list-group">
+                <ul class="todo_list list-group" id="wishList">
                     <li class="list-group-item" id="samplePlan">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1 ideaTitle">Sample Plan</h5>
-                            <small class="ideaTime">4/29/2019</small>
+                            <h5 class="mb-1 cardTitle ideaTitle ">Sample Plan</h5>
+                            <small class="ideaTime">Some day in the future</small>
                         </div>
-                        <p></p>
-                        <p class="mb-1 ideaDisplay">
+                        <details class="mb-1 ideaDisplay">
                             Columbia University is one of the world's most important centers of research and at the same time a distinctive and distinguished learning environment for undergraduates and graduate students in many scholarly and professional fields. The University recognizes the importance of its location in New York City and seeks to link its research and teaching to the vast resources of a great metropolis. It seeks to attract a diverse and international faculty and student body, to support research and teaching on global issues, and to create academic relationships with many countries and regions. It expects all areas of the University to advance knowledge and learning at the highest level and to convey the products of its efforts to the world.
-                        </p>
+                        </details>
+                        <button onclick="deletePlan('samplePlan')" class="btn btn-danger deletePlan">delete</button>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="part_entry col-md-6 list-pre-container">
+        <div class="part_entry col-6 list-pre-container">
             <p class="list-name name2">Trip History</p>
-            <ul class="did_list list-group">
+            <ul class="did_list list-group" id="history">
                 <li class="list-group-item" id="sampleHistory">
                     <div class="d-flex w-100 justify-content-between">
-                        <p class="mb-1 ideaTitle">Sample Plan</p>
-                        <span class="ideaTime">4/29/2019</span>
+                        <p class="mb-1 historyIdeaTitle btn">Sample Plan</p>
+                        <span class="historyIdeaTime btn">Some day in past</span>
+                        <button onclick="deletePlan('sampleHistory')" class="btn btn-danger deletePlan">delete</button>
                     </div>
                 </li>
             </ul>
@@ -134,7 +137,7 @@
 
 
 </body>
-<script type="text/javascript" src="js/iamDealer.js"></script>
+<script type="text/javascript" src="js/userDealer.js"></script>
 <script type="text/javascript" src="js/apiAdaptor.js"></script>
 <script type="text/javascript" src="js/wishDealer.js"></script>
 </html>

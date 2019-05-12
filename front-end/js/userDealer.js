@@ -3,18 +3,19 @@
  */
 
 const identity_pool_id = "us-east-1:4adb0b09-ad94-4423-ba16-a1a3750d8e45";
-
 const aws_region = 'us-east-1';
-user_id = null;
 
+current_user = {
+    user_id: 'unk',
+    user_name: 'unk',
+};
 
 try {
     id_token = location.toString().split('id_token=')[1].split('&access_token=')[0];
     access_token = location.toString().split('&access_token=')[1].split('&')[0];
-}
-
-catch (e) {
+} catch (e) {
     id_token = 'UNK';
+    access_token= 'UNK';
 }
 
 AWS.config.region = aws_region; // Region
@@ -27,7 +28,7 @@ if (AWS.config.credentials) {
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
     IdentityPoolId: identity_pool_id,
     Logins: {
-        'cognito-idp.us-east-1.amazonaws.com/us-east-1_l3NXswyeG': id_token
+        'cognito-idp.us-east-1.amazonaws.com/us-east-1_l3NXswyeG': id_token,
     }
 });
 
@@ -42,8 +43,14 @@ AWS.config.credentials.refresh((error) => {
             AccessToken: access_token /* required */
         };
         cognitoidentityserviceprovider.getUser(params, function(err, data) {
-            if (err) console.log(err, err.stack); // an error occurred
-            else console.log(data);           // successful response
+            if (err) console.log(err, err.stack);
+            // an error occurred
+            else {
+                current_user.user_id = data['UserAttributes'][0]['Value'];
+                current_user.user_name = `${data['UserAttributes'][2]['Value']} ${data['UserAttributes'][3]['Value']}`;
+                console.log(current_user);
+            }
+            // successful response
         });
 
 

@@ -89,3 +89,20 @@ body {
 .modal-footer{
     border: none;
 }
+
+.historyIdeaTime{
+    font-size: 18px;
+    color: #999999;
+}
+
+.historyIdeaTitle{
+    font-size: 18px;
+    color: #999999;
+}
+.deletePlan{
+    margin-left:80%;
+}
+
+.ideaTitle{
+    font-size: 1.5em;
+}
