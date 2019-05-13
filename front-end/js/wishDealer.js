@@ -41,6 +41,15 @@ function addNewTrip() {
     }
 }
 
+function addNewTripinChatPage(id, name) {
+    $('#exampleModalLabel').innerText = `Add new plan for ${name}`;
+    $('#place').val(name);
+    document.getElementById(id).click();
+    document.getElementById('addPlan').click();
+    $('.message_input').val(`Add my plan for ${name} in my wish list. %&%wish`);
+    document.getElementById("send_message").click();
+}
+
 function deletePlan(textId) {
     let r=confirm("Are you sure?");
     if(!r){
@@ -76,7 +85,7 @@ function appendTrip(jsonResponse){
                     <div class="d-flex w-100 justify-content-between">
                         <button onclick="deletePlan('${jsonResponse['textId']}')" class="btn btn-danger">delete</button>
                         <p class="mb-1 historyIdeaTitle btn">${jsonResponse['place']}</p>
-                        <span class="historyIdeaTime btn">${jsonResponse['planDate']}</span>
+                        <span class="historyIdeaTime btn"> <sup>${jsonResponse['planDate']}</sup> </span>
                     </div>
 
                 </li>`);

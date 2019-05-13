@@ -108,9 +108,54 @@
     </div>
 </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="addPlanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeAdd">
+                    <span style="color: whitesmoke"><i class="fa fa-window-close" aria-hidden="true"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="add_new_trip">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Plan Date</span>
+                        </div>
+                        <input type="date" id="date" class="form-control" title="date" aria-label="Date" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Place</span>
+                        </div>
+                        <input type="text" title="place" class="form-control" id="place" aria-describedby="basic-addon3">
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Description</span>
+                        </div>
+                        <textarea class="form-control" title="place_idea" aria-label="place_idea" id="place_idea" ></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn_top add_btn" onclick="addNewTrip()">Add New Trip</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button class="hide" id="addPlan" type="button" data-toggle="modal" data-target="#addPlanModal"></button>
+
+
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx_aaPjCjgx6wzc3BOlK55Qp1OoHFA5bA" type="text/javascript"></script>
 <script type="text/javascript" src="js/userDealer.js"></script>
 <script type="text/javascript" src="js/apiAdaptor.js"></script>
 <script type="text/javascript" src="js/chatBotDealer.js"></script>
+<script type="text/javascript" src="js/wishDealer.js"></script>
 </html>

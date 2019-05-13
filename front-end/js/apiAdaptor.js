@@ -196,8 +196,13 @@ function attractionDealer(response){
                                     </details>
                                                                         <br>
                                     <button type="button" class="btn btn-primary"
-                                     onclick="findHotels('${name}', ${location_lat}, ${location_lng},'${model_id}Close')">Find Hotels
+                                     onclick="addNewTripinChatPage('${model_id}Close','${name}')">Add to my list
                                      </button>
+                                     
+                                      <button type="button" class="btn btn-primary"
+                                     onclick="findHotels('${name}', ${location_lat}, ${location_lng},'${model_id}Close')">Find hotels
+                                     </button>
+                                     
                                      
                                      <button type="button" class="btn btn-secondary" onclick="nice(${location_lat},${location_lng},'${name}','${model_id}')"><i class="fa fa-map"></i> Map</button>
                                     </div>
