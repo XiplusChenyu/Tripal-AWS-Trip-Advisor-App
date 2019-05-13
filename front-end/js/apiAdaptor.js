@@ -287,8 +287,7 @@ function nice(lat, lng, title, model_id) {
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="mapModalLabel${model_id}"></h4>
+                                            <h4 class="modal-title" id="mapModalLabel${model_id}">${title}</h4>
                                         </div>
                                         <div class="modal-body">
                                             <div id="map_canvas" style="width: 100%; height: 450px"></div>

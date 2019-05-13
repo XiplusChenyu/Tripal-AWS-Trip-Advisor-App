@@ -42,6 +42,10 @@ function addNewTrip() {
 }
 
 function deletePlan(textId) {
+    let r=confirm("Are you sure?");
+    if(!r){
+        return
+    }
     console.log(textId);
     console.log(`delete id ${textId}`);
     // Todo: delete text from DB
