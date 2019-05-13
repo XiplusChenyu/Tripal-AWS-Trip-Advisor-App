@@ -14,6 +14,20 @@ body {
     background: #45829b;
     color: white;
 }
+
+
+.send_btn:hover {
+    background: #FF9640;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.send_btn {
+    background: #A64B00;
+    color: white;
+}
+
 .list_window {
     position: absolute;
     width: calc(100% - 100px);

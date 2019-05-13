@@ -120,6 +120,12 @@ function getAllPlans(peopleID){
     })
 }
 
+function sendMessage(){
+    let phone = prompt(`please enter you phone number, ${current_user.user_name}`);
+    console.log(phone);
+
+}
+
 wishPage = true;
 
 // test1 =
