@@ -123,7 +123,17 @@ function getAllPlans(peopleID){
 function sendMessage(){
     let phone = prompt(`please enter you phone number, ${current_user.user_name}`);
     console.log(phone);
-
+    if(phone){
+        let para = {
+            phone: phone,
+            peopleID: current_user.user_id,
+        };
+        apigClient.snsPost({}, para, {}).then((res)=>{
+            console.log('sent to phone');
+        }).catch((e)=>{
+            console.log(e);
+        })
+    }
 }
 
 wishPage = true;

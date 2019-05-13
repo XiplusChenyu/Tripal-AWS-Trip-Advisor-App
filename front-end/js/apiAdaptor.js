@@ -187,22 +187,25 @@ function attractionDealer(response){
                             
                                 <div id="collapse${model_id + i}" class="collapse" aria-labelledby="heading${model_id + i}" data-parent="${model_id}addOn">
                                     <img class="card-img-top" src=${photo} alt="Card image cap">
-                                    <div class="card-body">
+                                    <div class="card-body" id="body${model_id + i}">
                                     <p><i class='fa fa-building'></i> Address: ${address}</p>
                                     <p><i class='fa fa-registered'></i> Rating: ${rating}</p>
-                                    <br>
                                     <details> 
                                     <summary>Review for ${name}</summary>
                                     ${review}
                                     </details>
+                                                                        <br>
                                     <button type="button" class="btn btn-primary"
                                      onclick="findHotels('${name}', ${location_lat}, ${location_lng},'${model_id}Close')">Find Hotels</button>
-                                     <a href="${website}" target="_Blank" class="btn btn-warning"><i class="fa fa-location-arrow"></i> Web</a>
                                     </div>
                                 </div>
                             </div>`);
 
         $(`#${model_id}addOn`).append(kidAddOn);
+        if (website!=='no'){
+            let weblink = $(`<a href="${website}" target="_Blank" class="btn btn-warning"><i class="fa fa-location-arrow"></i> Web</a>`);
+            $(`#body${model_id + i}`).append(weblink);
+        }
     }
     return {
         return_message: return_message,

@@ -96,3 +96,7 @@ function chatRouter(){
     let redirectUrl = `https://s3.amazonaws.com/tripal-web-holder/chat.html?id_token=${id_token}&access_token=${access_token}&end`
     return window.location.replace(redirectUrl)
 }
+
+$(function () {
+    $('[data-toggle="popover"]').popover()
+});
