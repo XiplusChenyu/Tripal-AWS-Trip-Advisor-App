@@ -81,9 +81,9 @@
             <ul class="did_list list-group" id="history">
                 <li class="list-group-item" id="sampleHistory">
                     <div class="d-flex w-100 justify-content-between">
+                        <button onclick="deletePlan('sampleHistory')" class="btn btn-danger deletePlan">delete</button>
                         <p class="mb-1 historyIdeaTitle btn">Sample Plan</p>
                         <span class="historyIdeaTime btn">Some day in past</span>
-                        <button onclick="deletePlan('sampleHistory')" class="btn btn-danger deletePlan">delete</button>
                     </div>
                 </li>
             </ul>
@@ -131,6 +131,28 @@
 
                 </form>
             </div>
+        </div>
+    </div>
+</div>
+
+
+<!--This is for waiting animation-->
+<div class="loader" id="waiter" style="background-color: black; opacity: 0.8">
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
         </div>
     </div>
 </div>

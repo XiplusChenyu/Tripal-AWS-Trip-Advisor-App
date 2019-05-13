@@ -27,10 +27,12 @@ function addNewTrip() {
         };
         console.log(doc);
         $("#closeAdd").trigger("click");
+        $('#waiter').removeClass('hide');
         apigClient.postwishlistPost({}, doc, {}).then((res)=>{
             console.log(res);
             console.log('post a new plan');
             appendTrip(doc);
+            $('#waiter').addClass('hide');
         }).catch((e)=>{
             console.log('fail to add a new plan');
             console.log(e);
@@ -47,10 +49,12 @@ function deletePlan(textId) {
         textID: `${textId}`,
         peopleID: 'fake',
     };
+    $('#waiter').removeClass('hide');
     apigClient.wishlistTextIDTextIDGet(para, {}, {}).then((res)=>{
         console.log(res);
         console.log('delete plan');
         $(`#${textId}`).addClass('hide');
+        $('#waiter').addClass('hide');
     }).catch((e)=>{
         console.log('fail to delete new plan');
         console.log(e);
@@ -66,10 +70,11 @@ function appendTrip(jsonResponse){
         let $template = $(`  
                 <li class="list-group-item" id=${jsonResponse['textId']}>
                     <div class="d-flex w-100 justify-content-between">
+                        <button onclick="deletePlan('${jsonResponse['textId']}')" class="btn btn-danger">delete</button>
                         <p class="mb-1 historyIdeaTitle btn">${jsonResponse['place']}</p>
                         <span class="historyIdeaTime btn">${jsonResponse['planDate']}</span>
-                        <button onclick="deletePlan('${jsonResponse['textId']}')" class="btn btn-danger">delete</button>
                     </div>
+
                 </li>`);
         $("#history").append($template);
     }
@@ -105,6 +110,9 @@ function getAllPlans(peopleID){
             let current_res = items[j];
             appendTrip(current_res);
         }
+        $('#waiter').addClass('hide');
+        $('#waiter').removeAttr('style');
+
 
     }).catch((e)=>{
         console.log('failed to obtain people info');
