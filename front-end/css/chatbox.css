@@ -344,3 +344,9 @@ body {
     background: #45829b;
     color: white;
 }
+
+#map{
+    z-index: 100;
+    position: absolute;
+    top: 25%;
+}

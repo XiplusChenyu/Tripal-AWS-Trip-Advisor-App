@@ -196,7 +196,15 @@ function attractionDealer(response){
                                     </details>
                                                                         <br>
                                     <button type="button" class="btn btn-primary"
-                                     onclick="findHotels('${name}', ${location_lat}, ${location_lng},'${model_id}Close')">Find Hotels</button>
+                                     onclick="addNewTripinChatPage('${model_id}Close','${name}')">Add to my list
+                                     </button>
+                                     
+                                      <button type="button" class="btn btn-primary"
+                                     onclick="findHotels('${name}', ${location_lat}, ${location_lng},'${model_id}Close')">Find hotels
+                                     </button>
+                                     
+                                     
+                                     <button type="button" class="btn btn-secondary" onclick="nice(${location_lat},${location_lng},'${name}','${model_id}')"><i class="fa fa-map"></i> Map</button>
                                     </div>
                                 </div>
                             </div>`);
@@ -248,4 +256,67 @@ findHotels = function(name, location_lat, location_lng, model_id) {
     console.log(`Find Hotels around ${name}. %&%lat:${location_lat}, lng:${location_lng}`);
     document.getElementById("send_message").click();
 };
+
+
+
+function nice(lat, lng, title, model_id) {
+    document.getElementById(model_id).click(); // close th modal window
+
+    googleMap = {
+        map: null,
+        initialize: function (lat, lng) {
+            let myOptions = {
+                zoom: 15,
+                center: new google.maps.LatLng(lat, lng),
+                mapTypeControl: true,
+                mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+                navigationControl: true,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            this.map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
+            let marker = new google.maps.Marker({
+                position: new google.maps.LatLng(lat, lng),
+                map: this.map,
+                title: `${title}`
+            });
+    },
+};
+
+    let $body =  $('body');
+    let hidden_button = $(`<button class="btn btn-primary hide"  id='${model_id}MapShown' data-toggle="modal" data-target="#google_maps_api${model_id}">hidden</button>`)
+    let mapWindow = $(`
+                            <!--Use this model to show map-->
+                            
+                            <div class="modal fade" id="google_maps_api${model_id}" tabindex="-1" role="dialog"
+                                 aria-labelledby="mapModalLabel${model_id}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="mapModalLabel${model_id}">${title}</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="map_canvas" style="width: 100%; height: 450px"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close Map Window</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            `);
+
+    $body.append(mapWindow); //create map on body
+    $body.append(hidden_button);
+
+    document.getElementById(`${model_id}MapShown`).click();
+
+    $(`#google_maps_api${model_id}`).on("shown.bs.modal", function () {
+        googleMap.initialize(lat, lng);
+    }).on('hide.bs.modal', function () { //when close the model
+        $(`#google_maps_api${model_id}`).remove();
+        $(`#${model_id}MapShown`).remove();
+    });
+}
+
+
 

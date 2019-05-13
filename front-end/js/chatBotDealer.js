@@ -4,6 +4,7 @@
 
 const customer = 'right';
 const robot = 'left';
+chatPage = true;
 
 function EnterPress(e){ // detect key down
     let keyDown = e || window.event;
@@ -79,6 +80,10 @@ function bookFlight() {
                 sendMessage('You are illegal user! Please try to sign in first :)', robot);
                 return
             }
+            else if(msg.search(' %&%wish') !== -1){
+                sendMessage('Ok, we will add it for you.', robot);
+                return
+            }
             $('#waiter').removeClass('hide');
             let body = toBotRequest(msg, current_user.user_id);
             apigClient.chatbotPost({}, body, {}).then((res)=>{
@@ -88,7 +93,7 @@ function bookFlight() {
                 sendMessage(data.return_message, robot, data.model_id, data.message_type);
             }).catch((e)=>{
                 // sendMessage(`Fail to get server response. Error ${e} `, robot);
-                sendMessage('Fail to get server response... Please retry', robot);
+                sendMessage('Ops, we are unable to deal with that... Please retry', robot);
             });
         };
 
@@ -98,7 +103,8 @@ function bookFlight() {
             sendMessage(customer_message, customer);
             getReply(customer_message);
         });
-        sendMessage("Hey, I'm your travel assistant! " +
-            "Where do you plan to go?", robot);
+        sendMessage(`Hey, I'm your travel assistant! Where do you plan to go?`, robot);
     });
 }.call(this));
+
+

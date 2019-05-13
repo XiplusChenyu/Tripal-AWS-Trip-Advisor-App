@@ -7,10 +7,12 @@ const aws_region = 'us-east-1';
 
 current_user = {
     user_id: 'unk',
-    user_name: 'unk',
+    user_name: '',
 };
 
 wishPage = false;
+chatPage = false;
+userLogin = false;
 
 try {
     id_token = location.toString().split('id_token=')[1].split('&access_token=')[0];
@@ -72,9 +74,10 @@ AWS.config.credentials.refresh((error) => {
                     catch(e) {
                         console.log('token exchange failed');
                     }
-                    if (wishPage){
+                    if (wishPage&&!chatPage){
                         getAllPlans(current_user.user_id);
                     }
+                    userLogin = true;
 
                 });
             }
