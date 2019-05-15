@@ -10,7 +10,7 @@ def lambda_handler(event, context):
 
 
 
-    API_KEY = "AIzaSyAx_aaPjCjgx6wzc3BOlK55Qp1OoHFA5bA"
+    API_KEY = ""
 
     # placeid = 'ChIJoxqn-kD2wokRLvhOLfAneU8'
     placeid = event['placeid']
