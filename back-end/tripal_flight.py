@@ -52,7 +52,7 @@ def lambda_handler(event, context):
     response = unirest.get(api_link,
       headers={
         "X-RapidAPI-Host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-        "X-RapidAPI-Key": "4db5077f80msh474ba85a6bff987p1816a6jsna75506094f1d"
+        "X-RapidAPI-Key": ""
       }
     )
 
