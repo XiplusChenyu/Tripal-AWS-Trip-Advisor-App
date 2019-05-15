@@ -10,7 +10,7 @@ def lambda_handler(event, context):
     # }
     city = event['city']
     # city = 'new york'
-    API_KEY = 'AIzaSyAx_aaPjCjgx6wzc3BOlK55Qp1OoHFA5bA'
+    API_KEY = ''
 
     link =  'https://maps.googleapis.com/maps/api/place/textsearch/json?query='
 
