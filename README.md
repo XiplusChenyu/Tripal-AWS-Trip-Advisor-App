@@ -1,6 +1,6 @@
 # Tripo
 This is a cloud computing project based on AWS<br/>
-Check here to view our <a href='https://s3.amazonaws.com/tripal-web-holder/index.html' /a>
+Check here to view our <a href='https://s3.amazonaws.com/tripal-web-holder/index.html'> web page </a> 
 
 ## Authors
 - Chenyu Xi (cx2219)
