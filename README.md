@@ -30,7 +30,7 @@ This travel assistant web application supports an integrated service (attraction
 ## Flight
 <img src="https://github.com/XiplusChenyu/Tripo/blob/master/sample%20images/flight.png" width=500>
 
-## ADD wishlist
+## Add wishlist
 <img src="https://github.com/XiplusChenyu/Tripo/blob/master/sample%20images/add_wishlist.png" width=500>
 
 ## wishlist view
