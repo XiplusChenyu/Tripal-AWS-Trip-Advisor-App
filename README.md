@@ -1,5 +1,5 @@
-# Tripo
-This is a cloud computing project based on AWS<br/>
+# Tripal
+Tripal is a web app based on AWS Service.  
 Check here to view our <a href='https://s3.amazonaws.com/tripal-web-holder/index.html'> web page </a> 
 
 ## Authors
