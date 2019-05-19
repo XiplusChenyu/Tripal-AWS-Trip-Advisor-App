@@ -1,5 +1,5 @@
 /**
- * This file is used for message display and API query
+ * This file is used for chat message display and API query
  */
 
 const customer = 'right';

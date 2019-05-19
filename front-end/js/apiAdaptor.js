@@ -1,6 +1,9 @@
+/**
+ * This js is used for create clickable message
+ */
+$empty = $('<h5>Ops, there is a desert ....</h5>'); // display this message when no value is returned from API
 
-$empty = $('<h5>Ops, there is a desert ....</h5>');
-
+// this function convert user message to JSON format
 function toBotRequest(message, userID){
     let date = new Date();
     return {
@@ -17,12 +20,14 @@ function toBotRequest(message, userID){
     };
 }
 
+// this function create a modal window to display hotel information
 function attractHotel(response) {
     let type = response.body.Intent;
     let result_list = response.body[type];
     let return_message = response.body.message;
     let date = new Date();
     let model_id = 'hotel' + date.getTime();
+    // create the modal window container
     let $fathermodel = $(`<div class="modal fade" id=${model_id} tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -40,10 +45,13 @@ function attractHotel(response) {
                                 </div>
                             </div>`);
     $('body').append($fathermodel);
+
+    // if the result is empty, display a message
     if (0===result_list.length){
         $(`#${model_id}addOn`).append($empty);
     }
 
+    // create accordion list items
     for (let i = 0; i < result_list.length; i++) {
         let currentHotel = result_list[i];
         let name = currentHotel.name;
@@ -80,6 +88,8 @@ function attractHotel(response) {
     }
 }
 
+
+// this function create a modal window to display Fight information, with same logic as above
 function attractFlight(response){
     let type = response.body.Intent;
     let result_list = response.body[type];
@@ -108,6 +118,7 @@ function attractFlight(response){
     }
     for (let i=0; i<result_list.length; i++) {
         let currentFlight = result_list[i];
+        // create online store button
         if (currentFlight.kayak_link){
             let kidAddOn = $(`<li class="list-group-item">
                                 <a href="${currentFlight.kayak_link}" target="_Blank" class="btn btn_top external_btn">
@@ -134,7 +145,7 @@ function attractFlight(response){
     }
 }
 
-
+// this is used for generate attraction recommendation window
 function attractionDealer(response){
     let type = response.body.Intent;
     let result_list = response.body[type];
@@ -166,6 +177,7 @@ function attractionDealer(response){
     }
 
     for (let i=0; i<result_list.length; i++){
+        // create window for
         let currentAttraction = result_list[i];
         let photo = currentAttraction.photo_url;
         let website = currentAttraction.website;
@@ -224,7 +236,7 @@ function attractionDealer(response){
 
 
 
-
+// this function determines which dealer we use for current API response
 function getBotResponse(response) {
     if(response.data.body.Intent==='Attraction')
     {
@@ -237,6 +249,7 @@ function getBotResponse(response) {
         return attractHotel(response.data)
     }
     else{
+        // automatically adjust the model
         let message = response.data.body.message;
         if(message.toLowerCase().search("date") !== -1){
             $('.message_input').attr('type','date');
@@ -249,7 +262,7 @@ function getBotResponse(response) {
     }
 }
 
-
+// use this function to send request in backstage with location information
 findHotels = function(name, location_lat, location_lng, model_id) {
     document.getElementById(model_id).click();
     $('.message_input').val(`Find Hotels around ${name}. %&%lat:${location_lat}, lng:${location_lng}`);
@@ -258,7 +271,7 @@ findHotels = function(name, location_lat, location_lng, model_id) {
 };
 
 
-
+// this function is used for creating Google Map
 function nice(lat, lng, title, model_id) {
     document.getElementById(model_id).click(); // close th modal window
 

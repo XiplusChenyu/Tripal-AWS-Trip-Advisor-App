@@ -10,6 +10,7 @@ current_user = {
     user_name: '',
 };
 
+//  these help user identifier to know which is the current page
 wishPage = false;
 chatPage = false;
 userLogin = false;
@@ -27,7 +28,7 @@ AWS.config.region = aws_region; // Region
 if (AWS.config.credentials) {
     AWS.config.credentials.clearCachedId();
 }
- // clear old one and create new credential
+// clear old one and create new credential
 
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
     IdentityPoolId: identity_pool_id,
@@ -101,5 +102,6 @@ function chatRouter(){
 }
 
 $(function () {
+    // this is necessary for modal window pop-up
     $('[data-toggle="popover"]').popover()
 });

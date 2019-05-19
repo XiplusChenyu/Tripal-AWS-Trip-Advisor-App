@@ -1,3 +1,6 @@
+/**
+ * This js is used for plan addition, plan deletion, and send plan
+ */
 // current_user is defined in userDealer
 function addNewTrip() {
     let place = $('#place').val();
@@ -41,6 +44,7 @@ function addNewTrip() {
     }
 }
 
+// similar function while used in attraction card
 function addNewTripinChatPage(id, name) {
     $('#exampleModalLabel').innerText = `Add new plan for ${name}`;
     $('#place').val(name);
@@ -50,6 +54,7 @@ function addNewTripinChatPage(id, name) {
     document.getElementById("send_message").click();
 }
 
+// this is used for plan deletion
 function deletePlan(textId) {
     let r=confirm("Are you sure?");
     if(!r){
@@ -74,11 +79,12 @@ function deletePlan(textId) {
     })
 }
 
+// this function create list item,
 function appendTrip(jsonResponse){
     let currentDate = new Date();
     let planDate = new Date(jsonResponse['planDate']);
     if (currentDate.getTime() > planDate.getTime()){
-        // When the
+        // When there is not item
         $("#sampleHistory").addClass('hide');
         let $template = $(`  
                 <li class="list-group-item" id=${jsonResponse['textId']}>
@@ -110,6 +116,7 @@ function appendTrip(jsonResponse){
 }
 
 function getAllPlans(peopleID){
+    // Once user login, display all records for current user
     console.log(`get plans for people ${peopleID}`);
     // todo: query appendTrip here to add all items in the page
     let para={
@@ -134,6 +141,7 @@ function getAllPlans(peopleID){
 }
 
 function sendMessage(){
+    //This function ask user to type in their phone number and call SNS service
     let phone = prompt(`please enter you phone number, ${current_user.user_name}`);
     console.log(phone);
     if(phone){
@@ -150,20 +158,3 @@ function sendMessage(){
 }
 
 wishPage = true;
-
-// test1 =
-//     {
-//         "textId": "75dfa73a-edd9-4f0b-845b-ac668095e8cwerwgwerg51558828800000New",
-//         "peopleID": "75dfa73a-edd9-4f0b-845b-ac668095e8c52312",
-//         "place": "New Test 1",
-//         "idea": "New Test Containt",
-//         "planDate": "5/25/2019",
-//         "timeStamp": "5/11/2019"};
-//
-// test2 =
-//     {textId: "75dfa73a-edd9-4f0b-845b-ac668095e8c51sdfsdf558828800000New",
-//         peopleID: "75dfa73a-edd9-4f0b-845b-ac668095e8c5",
-//         place: "Old",
-//         idea: "Old",
-//         planDate: "5/10/2019",
-//         timeStamp: "5/10/2019"};
